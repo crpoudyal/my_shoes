@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottomRight: Radius.circular(20),
                   ),
                   image: DecorationImage(
-                      image: AssetImage(ImageHelper.nepalLogo),
+                      image: AssetImage(ImageHelper.homeBanner),
                       fit: BoxFit.cover),
                 ),
               ),
