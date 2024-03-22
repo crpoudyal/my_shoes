@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
-import 'package:my_shoes/helper/Image_helper.dart';
+import 'package:my_shoes/helper/image_helper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
