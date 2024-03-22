@@ -66,30 +66,36 @@ class ContactPage extends StatelessWidget {
                 ),
               ],
             ),
-            // const Divider(
-            //   thickness: 1,
-            // ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     Flexible(
-            //         child: ElevatedButton(
-            //             style: ElevatedButton.styleFrom(
-            //                 backgroundColor: Colors.white,
-            //                 side: const BorderSide(
-            //                     color: Colors.black, width: 0.2),
-            //                 shape: RoundedRectangleBorder(
-            //                     borderRadius: BorderRadius.circular(5))),
-            //             onPressed: () {},
-            //             child: const Text(
-            //               'Membership',
-            //               style: TextStyle(color: Colors.black),
-            //             ))),
-            //     Flexible(
-            //         child: ElevatedButton(
-            //             onPressed: () {}, child: const Text('Premium'))),
-            //   ],
-            // )
+            const Divider(
+              thickness: 1,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Flexible(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5))),
+                        onPressed: () {},
+                        child: const Text(
+                          'Membership',
+                          style: TextStyle(color: Colors.black),
+                        ))),
+                Flexible(
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5))),
+                        onPressed: () {},
+                        child: const Text(
+                          'Business',
+                          style: TextStyle(color: Colors.black),
+                        ))),
+              ],
+            )
           ],
         ),
       ),
