@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
+import 'package:my_shoes/screens/all_product.dart';
 import 'package:my_shoes/widgets/Item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -47,6 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       return ItemWidget(
                         itemImages: ImageHelper.shoesImages[index],
                         itemName: Constants.itemName[index],
+                        ontap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AllProduct(
+                                      image: ImageHelper.shoesImages[index],
+                                      name: Constants.itemName[index])));
+                        },
                       );
                     }),
               ),
@@ -61,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return ItemWidget(
                         itemImages: ImageHelper.brandImages[index],
                         itemName: Constants.brandName[index],
+                        ontap: () {},
                       );
                     }),
               ),

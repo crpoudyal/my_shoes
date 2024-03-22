@@ -25,7 +25,7 @@ class _BrandsScreenState extends State<BrandsScreen> {
             itemBuilder: (context, index) {
               return ItemWidget(
                 itemImages: ImageHelper.brandImages[index],
-                itemName: Constants.brandName[index],
+                itemName: Constants.brandName[index], ontap: () {  },
               );
             }),
       ),
