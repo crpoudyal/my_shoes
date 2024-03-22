@@ -19,7 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
           title: const Row(
             children: [
               Text('My Shoes. ',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                  SizedBox(width: 2,),
               Text('#SastoShoes',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             ],

@@ -12,7 +12,7 @@ class ItemWidget extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          SizedBox(height: 50, width: 50, child: Image.asset(itemImages)),
+          SizedBox(height: 70, width: 70, child: Image.asset(itemImages)),
           const SizedBox(height: 5),
           Text(itemName, style: const TextStyle(fontSize: 12))
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_shoes/screens/brands_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -19,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   static const List<Widget> _pages = [
     HomeScreen(),
-    HomeScreen(),
+    BrandsScreen(),
     HomeScreen(),
     HomeScreen(),
   ];
