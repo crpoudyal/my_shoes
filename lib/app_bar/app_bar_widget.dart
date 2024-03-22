@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 
-class AppBarWidget extends StatelessWidget {
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String slogon;
+
   const AppBarWidget({super.key, required this.slogon});
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
   Widget build(BuildContext context) {
