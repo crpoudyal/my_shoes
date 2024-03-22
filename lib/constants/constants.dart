@@ -10,8 +10,18 @@ class Constants {
     'Reebook',
     'Skechers',
     'Skechers',
+    'Reebook',
+    'Skechers',
+    'Reebook',
+    'Skechers',
+    'Skechers',
   ];
   static const List<String> itemName = [
+    'jaj',
+    'Snakers',
+    'Snakers',
+    'Snakers',
+    'Snakers',
     'Snakers',
     'Snakers',
     'Snakers',

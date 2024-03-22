@@ -8,6 +8,7 @@ class ImageHelper {
   static const linkedin = 'assets/images/linkedin.png';
 
   static const List<String> brandImages = [
+    "assets/brand/united.png",
     "assets/brand/adidas.jpeg",
     "assets/brand/converse.jpeg",
     "assets/brand/nike.jpeg",
@@ -18,6 +19,9 @@ class ImageHelper {
     "assets/brand/reebook.png",
     "assets/brand/tory.jpeg",
     "assets/brand/vans.jpeg",
+    "assets/brand/tory.jpeg",
+    "assets/brand/vans.jpeg",
+    "assets/brand/tory.jpeg",
   ];
   static const List<String> shoesImages = [
     "assets/shoes/1.png",
@@ -30,5 +34,9 @@ class ImageHelper {
     "assets/shoes/8.png",
     "assets/shoes/9.png",
     "assets/shoes/10.png",
+    "assets/shoes/12.png",
+    "assets/shoes/13.png",
+    "assets/shoes/14.png",
+    "assets/shoes/15.png",
   ];
 }
