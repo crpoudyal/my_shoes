@@ -2,7 +2,7 @@ class ImageHelper {
   static const appIcon = 'assets/images/app_icon.jpg';
   static const nepalLogo = 'assets/images/nepal_logo.png';
   static const microsoft = 'assets/images/microsoft.png';
-  static const banner = 'assets/images/banner.png';
+  static const homeBanner = 'assets/images/banner.png';
   static const map = 'assets/images/map.png';
   static const whatsapp = 'assets/images/whatsapp_log.jpeg';
   static const linkedin = 'assets/images/linkedin.png';
