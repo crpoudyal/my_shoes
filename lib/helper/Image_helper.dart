@@ -3,6 +3,9 @@ class ImageHelper {
   static const nepalLogo = 'assets/images/nepal_logo.png';
   static const microsoft = 'assets/images/microsoft.png';
   static const banner = 'assets/images/banner.png';
+  static const map = 'assets/images/map.png';
+  static const whatsapp = 'assets/images/whatsapp_log.jpeg';
+  static const linkedin = 'assets/images/linkedin.png';
 
   static const List<String> brandImages = [
     "assets/brand/adidas.jpeg",

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/screens/brands_screen.dart';
+import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -22,7 +23,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     BrandsScreen(),
     HomeScreen(),
-    HomeScreen(),
+    ContactPage(),
   ];
   @override
   Widget build(BuildContext context) {

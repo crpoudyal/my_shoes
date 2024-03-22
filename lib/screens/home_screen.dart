@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 300,
+                height: 250,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -64,6 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     }),
               ),
+              const Divider(thickness: 0.8),
+              Row(
+                children: [
+                  Flexible(child: Image.asset(ImageHelper.microsoft)),
+                  Flexible(child: Image.asset(ImageHelper.microsoft))
+                ],
+              )
             ],
           ),
         ));
