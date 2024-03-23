@@ -74,11 +74,11 @@ class _HomeScreenState extends State<HomeScreen> {
               child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: ImageHelper.brandImages.length,
+                  itemCount: ImageHelper.brands.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(
-                      itemImages: ImageHelper.brandImages[index],
-                      itemName: Constants.brandName[index],
+                      itemImages: ImageHelper.brands[index].brandImage,
+                      itemName: ImageHelper.brands[index].brandName,
                       ontap: () {},
                     );
                   }),

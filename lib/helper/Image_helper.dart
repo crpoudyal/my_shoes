@@ -1,7 +1,8 @@
+import 'package:my_shoes/models/brand_model.dart';
 import 'package:my_shoes/models/item_model.dart';
 
 class ImageHelper {
-  static const appIcon = 'assets/images/app_icon.jpg';
+  static const appIcon = 'assets/images/app_icon.png';
   static const nepalLogo = 'assets/images/nepal_logo.png';
   static const microsoft = 'assets/images/microsoft.png';
   static const homeBanner = 'assets/images/banner.png';
@@ -9,23 +10,32 @@ class ImageHelper {
   static const whatsapp = 'assets/images/whatsapp_logo.jpeg';
   static const linkedin = 'assets/images/linkedin.png';
   static const telegram = 'assets/images/telegram.png';
-
-  static const List<String> brandImages = [
-    "assets/brand/united.png",
-    "assets/brand/adidas.jpeg",
-    "assets/brand/converse.jpeg",
-    "assets/brand/nike.jpeg",
-    "assets/brand/puma.png",
-    "assets/brand/reebook.png",
-    "assets/brand/tory.jpeg",
-    "assets/brand/vans.jpeg",
-    "assets/brand/reebook.png",
-    "assets/brand/tory.jpeg",
-    "assets/brand/vans.jpeg",
-    "assets/brand/tory.jpeg",
-    "assets/brand/vans.jpeg",
-    "assets/brand/tory.jpeg",
+  
+  static List<BrandModel> brands = [
+    BrandModel(brandName: 'United', brandImage: 'assets/brand/united.png'),
+    BrandModel(brandName: 'Converse', brandImage: 'assets/brand/converse.jpeg'),
+    BrandModel(brandName: 'Nike', brandImage: 'assets/brand/nike.jpeg'),
+    BrandModel(brandName: 'Puma', brandImage: 'assets/brand/puma.png'),
+    BrandModel(brandName: 'Tory Burch', brandImage: 'assets/brand/tory.jpeg'),
+    BrandModel(brandName: 'VANS', brandImage: 'assets/brand/vans.jpeg'),
   ];
+
+  // static const List<String> brandImages = [
+  //   "",
+  //   "assets/brand/adidas.jpeg",
+  //   "assets/brand/converse.jpeg",
+  //   "assets/brand/nike.jpeg",
+  //   "assets/brand/puma.png",
+  //   "assets/brand/reebook.png",
+  //   "assets/brand/tory.jpeg",
+  //   "assets/brand/vans.jpeg",
+  //   "assets/brand/reebook.png",
+  //   "assets/brand/tory.jpeg",
+  //   "assets/brand/vans.jpeg",
+  //   "assets/brand/tory.jpeg",
+  //   "assets/brand/vans.jpeg",
+  //   "assets/brand/tory.jpeg",
+  // ];
   static List<ItemModel> items = [
     ItemModel(
         itemName: 'United (UT-906)',
