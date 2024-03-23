@@ -9,7 +9,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const AppBarWidget(slogon: '#SASTO SHOES'),
+      appBar: const AppBarWidget(slogon: '#सस्तो जुत्ता'),
       body: Padding(
         padding: const EdgeInsets.only(right: 12, left: 12, bottom: 10),
         child: Column(
@@ -42,7 +42,7 @@ class ContactPage extends StatelessWidget {
               subtitle: Text('+977-98XXXXXXXX'),
             ),
             const ListTile(
-              leading: Icon(Icons.web),
+              leading: Icon(Icons.public),
               title: Text('xyz.com.np'),
             ),
             Row(
@@ -58,47 +58,57 @@ class ContactPage extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.face)),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.face)),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.face)),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  child: CircleAvatar(
+                    maxRadius: 20,
+                    child: Image.asset(ImageHelper.whatsapp),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  child: CircleAvatar(
+                    maxRadius: 20,
+                    child: Image.asset(ImageHelper.telegram),
+                  ),
+                ),
                 const Divider(
                   thickness: 0.5,
                 ),
               ],
             ),
-            const Divider(
-              thickness: 1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Flexible(
-                    child: TextButton(
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        onPressed: () {},
-                        child: const Text(
-                          'Membership',
-                          style: TextStyle(color: Colors.black),
-                        ))),
-                Flexible(
-                    child: TextButton(
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        onPressed: () {},
-                        child: const Text(
-                          'Business',
-                          style: TextStyle(color: Colors.black),
-                        ))),
-              ],
-            )
           ],
         ),
       ),
+      persistentFooterButtons: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Flexible(
+                child: TextButton(
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5))),
+                    onPressed: () {},
+                    child: const Text(
+                      'Membership',
+                      style: TextStyle(color: Colors.black),
+                    ))),
+            Flexible(
+                child: TextButton(
+                    style: TextButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5))),
+                    onPressed: () {},
+                    child: const Text(
+                      'Business',
+                      style: TextStyle(color: Colors.black),
+                    ))),
+          ],
+        )
+      ],
     );
   }
 }
