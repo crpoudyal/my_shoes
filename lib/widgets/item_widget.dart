@@ -1,15 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ItemWidget extends StatelessWidget {
   final String itemImages;
   final String itemName;
   final VoidCallback ontap;
 
-  const ItemWidget(
-      {super.key,
-      required this.itemImages,
-      required this.itemName,
-      required this.ontap});
+  const ItemWidget({
+    super.key,
+    required this.itemImages,
+    required this.itemName,
+    required this.ontap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +22,17 @@ class ItemWidget extends StatelessWidget {
         onTap: ontap,
         child: Column(
           children: [
-            SizedBox(
-                height: 70,
-                width: 70,
-                child: Hero(tag: 'tag', child: Image.asset(itemImages))),
+            Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(itemImages), fit: BoxFit.contain)),
+            ),
             const SizedBox(height: 5),
-            Text(itemName, style: const TextStyle(fontSize: 12))
+            Text(itemName,
+                style:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w800))
           ],
         ),
       ),
