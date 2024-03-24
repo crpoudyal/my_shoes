@@ -12,6 +12,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController pageController = PageController();
+  bool isLastPage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +22,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
           child: PageView.builder(
               itemCount: OnboardingHelper.item.length,
+              onPageChanged: (index) {
+                setState(() {
+                  isLastPage = OnboardingHelper.item.length - 1 == index;
+                });
+              },
               controller: pageController,
               itemBuilder: (context, index) {
                 return Column(
@@ -50,35 +56,44 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
                     ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4B4B4B)),
-                        onPressed: () {
-                          pageController.nextPage(
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.easeIn);
-                        },
-                        child: const Text(
-                          'Next',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18),
-                        )),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF4B4B4B)),
+                      onPressed: () {
+                        pageController.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
+                      },
+                      child: isLastPage
+                          ? getStarted(context)
+                          : const Text(
+                              'Next',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18),
+                            ),
+                    ),
                     const SizedBox(
                       height: 10,
                     ),
                     TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const BottomNavBar()));
-                        },
-                        child: const Text(
-                          'Skip',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w500),
-                        )),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const BottomNavBar(),
+                          ),
+                        );
+                      },
+                      child: isLastPage
+                          ? const SizedBox()
+                          : const Text(
+                              'Skip',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                    ),
                   ],
                 );
               }),
@@ -106,4 +121,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       ),
     );
   }
+}
+
+Widget getStarted(BuildContext context) {
+  return TextButton(
+      onPressed: () async {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const BottomNavBar()));
+      },
+      child: const Text(
+        "Home",
+        style: TextStyle(color: Colors.white, fontSize: 18),
+      ));
 }
