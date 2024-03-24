@@ -55,15 +55,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemName: ImageHelper.items[index].itemName,
                       ontap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ShoesDetails(
-                                      image: ImageHelper.items[index].itemImage,
-                                      name:
-                                          ImageHelper.items[index].itemFullName,
-                                      brand: ImageHelper.items[index].itemBrand,
-                                      price: ImageHelper.items[index].itemPrice,
-                                    )));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ShoesDetails(
+                              image: ImageHelper.items[index].itemImage,
+                              name: ImageHelper.items[index].itemFullName,
+                              brand: ImageHelper.items[index].itemBrand,
+                              price: ImageHelper.items[index].itemPrice,
+                            ),
+                          ),
+                        );
                       },
                     );
                   }),
@@ -85,15 +86,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemName: ImageHelper.items[index].itemName,
                       ontap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ShoesDetails(
-                                      image: ImageHelper.items[index].itemImage,
-                                      name:
-                                          ImageHelper.items[index].itemFullName,
-                                      brand: ImageHelper.items[index].itemBrand,
-                                      price: ImageHelper.items[index].itemPrice,
-                                    )));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ShoesDetails(
+                              image: ImageHelper.items[index].itemImage,
+                              name: ImageHelper.items[index].itemFullName,
+                              brand: ImageHelper.items[index].itemBrand,
+                              price: ImageHelper.items[index].itemPrice,
+                            ),
+                          ),
+                        );
                       },
                     );
                   }),
