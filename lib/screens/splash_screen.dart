@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
 import 'package:my_shoes/helper/image_helper.dart';
+import 'package:my_shoes/on_boarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,13 +32,13 @@ class _SplashScreenState extends State<SplashScreen> {
             Expanded(
               child: CircleAvatar(
                 maxRadius: 70,
-                child: Image.network(ImageHelper.appIcon),
+                child: Image.asset(ImageHelper.appIcon),
               ),
             ),
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
-                "My Shoes.",
+                "United Shoes",
                 style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
@@ -57,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
-                "100k+ Downloads",
+                "सस्तो जुत्ता",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

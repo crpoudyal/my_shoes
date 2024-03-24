@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
-import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/screens/all_product.dart';
 import 'package:my_shoes/widgets/Item_widget.dart';
@@ -58,9 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => AllProduct(
-                                    image: ImageHelper.items[index].itemImage,
-                                    name: ImageHelper
-                                        .items[index].itemFullName)));
+                                      image: ImageHelper.items[index].itemImage,
+                                      name:
+                                          ImageHelper.items[index].itemFullName,
+                                      brand: ImageHelper.items[index].itemBrand,
+                                    )));
                       },
                     );
                   }),
