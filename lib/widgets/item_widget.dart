@@ -17,14 +17,14 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       child: GestureDetector(
         onTap: ontap,
         child: Column(
           children: [
             Container(
-              height: 50,
-              width: 50,
+              height: 65,
+              width: 65,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(itemImages), fit: BoxFit.contain)),

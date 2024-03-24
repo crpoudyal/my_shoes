@@ -11,7 +11,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const AppBarWidget(slogon: Constants.appSlogon),
+      appBar: const AppBarWidget(slogon: ''),
       body: Padding(
         padding: const EdgeInsets.only(right: 12, left: 12, bottom: 10),
         child: Column(
@@ -25,9 +25,12 @@ class ContactPage extends StatelessWidget {
                         image: AssetImage(ImageHelper.map), fit: BoxFit.cover)),
               ),
             ),
-            const Text(
-              'Contact Us',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                'Contact Us',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
             ),
             const ListTile(
               leading: Icon(Icons.location_on_outlined),
@@ -56,7 +59,7 @@ class ContactPage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
                   child: const Text(
-                    'Become a Member',
+                    Constants.becomeMember,
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -82,7 +85,9 @@ class ContactPage extends StatelessWidget {
           ],
         ),
       ),
-      persistentFooterButtons: const [ContactFooterWidget()],
+      persistentFooterButtons: const [
+        ContactFooterWidget(),
+      ],
     );
   }
 }
