@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
+import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/on_boarding/onboarding_screen.dart';
 
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const BottomNavBar()));
+          MaterialPageRoute(builder: (context) => const OnboardingScreen()));
     });
   }
 
@@ -35,10 +36,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Image.asset(ImageHelper.appIcon),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(top: 20),
+             const Padding(
+              padding: EdgeInsets.only(top: 15),
               child: Text(
-                "United Shoes",
+                Constants.appName,
                 style: TextStyle(
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
@@ -58,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
             const Padding(
               padding: EdgeInsets.only(top: 20),
               child: Text(
-                "सस्तो जुत्ता",
+                "100% Pure Leather",
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
