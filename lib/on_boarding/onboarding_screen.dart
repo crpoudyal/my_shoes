@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
 import 'package:my_shoes/helper/onboarding_helper.dart';
-import 'package:my_shoes/screens/home_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -26,14 +25,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(OnboardingHelper.item[index].image),
+                  SizedBox(
+                      height: 300,
+                      width: 300,
+                      child: Image.asset(OnboardingHelper.item[index].image)),
                   const SizedBox(
                     height: 15,
                   ),
                   Text(
                     OnboardingHelper.item[index].title,
                     style: const TextStyle(
-                        fontSize: 30, fontWeight: FontWeight.bold),
+                        fontSize: 50, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
                     height: 15,
@@ -61,7 +63,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         MaterialPageRoute(
                             builder: (context) => const BottomNavBar()));
                   },
-                  child: const Text('Skip')),
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.w500),
+                  )),
               SmoothPageIndicator(
                 controller: pageController,
                 count: OnboardingHelper.item.length,
@@ -69,9 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     duration: const Duration(milliseconds: 500),
                     curve: Curves.easeIn),
                 effect: const WormEffect(
-                    activeDotColor: Colors.deepPurple,
-                    dotHeight: 12,
-                    dotWidth: 12),
+                    activeDotColor: Colors.black, dotHeight: 12, dotWidth: 12),
               ),
               TextButton(
                   onPressed: () {
@@ -79,7 +83,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeIn);
                   },
-                  child: const Text('Next')),
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.w500),
+                  )),
             ],
           ),
         ),

@@ -3,7 +3,6 @@ import 'package:my_shoes/screens/all_shoes.dart';
 import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
-import 'package:my_shoes/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
