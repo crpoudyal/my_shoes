@@ -19,7 +19,7 @@ class OnboardingHelper {
             '100% pure Genuine Leather : Made in Nepal with Nepali Raw Materials; Snug Fit : The shoe is made just for you.',
         image: ImageHelper.onboarding_3),
     OnboardingModel(
-        title: 'Nabin Bhattari',
+        title: 'Nabin Bhattarai',
         description:
             '100% pure Genuine Leather : Made in Nepal with Nepali Raw Materials; Snug Fit : The shoe is made just for you.',
         image: ImageHelper.onboarding_4),

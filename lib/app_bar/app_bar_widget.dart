@@ -17,6 +17,13 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
         children: [
           const Text(Constants.appName,
               style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900)),
+         const SizedBox(
+            height: 20,
+            child: VerticalDivider(
+              color: Colors.black,
+              thickness: 2,
+            ),
+          ),
           Text(slogon,
               style:
                   const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),

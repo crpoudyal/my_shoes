@@ -1,5 +1,5 @@
 class Constants {
-  static const String appName = 'United Real Leather Shoes ';
+  static const String appName = 'United Real Leather';
   static const String appSlogon = '100% Pure Leather';
   // contact
   static const String email = 'unitedtanneries@gmail.com';
