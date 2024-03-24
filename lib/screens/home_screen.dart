@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
+import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
-import 'package:my_shoes/screens/all_product.dart';
+import 'package:my_shoes/screens/shoes_details.dart';
 import 'package:my_shoes/widgets/Item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(slogon: '#सस्तो जुत्ता'),
+      appBar: const AppBarWidget(slogon: Constants.appSlogon),
       body: Padding(
         padding: const EdgeInsets.only(left: 12, right: 12),
         child: Column(
@@ -36,12 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              'Shoes Marketplace',
+              Constants.appSlogon,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             const Text(
-              '# Top Items',
-              style: TextStyle(fontSize: 16),
+              '# Best Selling',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             Expanded(
               child: ListView.builder(
@@ -56,11 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AllProduct(
+                                builder: (context) => ShoesDetails(
                                       image: ImageHelper.items[index].itemImage,
                                       name:
                                           ImageHelper.items[index].itemFullName,
                                       brand: ImageHelper.items[index].itemBrand,
+                                      price: ImageHelper.items[index].itemPrice,
                                     )));
                       },
                     );
@@ -68,24 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              '# New Items',
-              style: TextStyle(fontSize: 16),
+              '# New Arrivals',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            // Expanded(
-            //   child: ListView.builder(
-            //       physics: const ClampingScrollPhysics(),
-            //       scrollDirection: Axis.horizontal,
-            //       itemCount: ImageHelper.brands.length,
-            //       itemBuilder: (context, index) {
-            //         return ItemWidget(
-            //           itemImages: ImageHelper.brands[index].brandImage,
-            //           itemName: ImageHelper.brands[index].brandName,
-            //           ontap: () {},
-            //         );
-            //       }),
-            // ),
             Expanded(
               child: ListView.builder(
+                  reverse: true,
                   physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: ImageHelper.items.length,
@@ -97,11 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AllProduct(
+                                builder: (context) => ShoesDetails(
                                       image: ImageHelper.items[index].itemImage,
                                       name:
                                           ImageHelper.items[index].itemFullName,
                                       brand: ImageHelper.items[index].itemBrand,
+                                      price: ImageHelper.items[index].itemPrice,
                                     )));
                       },
                     );
