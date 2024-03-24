@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(slogon: Constants.appSlogon),
+      appBar: const AppBarWidget(slogon: ''),
       body: Padding(
         padding: const EdgeInsets.only(left: 12, right: 12),
         child: Column(
@@ -37,13 +37,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              Constants.appSlogon,
+              'Made in Nepal',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
+            const SizedBox(height: 10),
             const Text(
-              '# Best Selling',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Constants.bestSelling,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
+            const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
@@ -71,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              '# New Arrivals',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              Constants.newArrivles,
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
             ),
             Expanded(
               child: ListView.builder(
@@ -106,8 +108,32 @@ class _HomeScreenState extends State<HomeScreen> {
       persistentFooterButtons: [
         Row(
           children: [
-            Flexible(child: Image.asset(ImageHelper.microsoft)),
-            Flexible(child: Image.asset(ImageHelper.microsoft))
+            Flexible(
+                child: Row(
+              children: [
+                SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(ImageHelper.darazLogo)),
+                const Text(
+                  'Available in daraz',
+                  style: TextStyle(fontSize: 16),
+                )
+              ],
+            )),
+            Flexible(
+                child: Row(
+              children: [
+                SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: Image.asset(ImageHelper.imepayLogo)),
+                const Text(
+                  'Payment Partner',
+                  style: TextStyle(fontSize: 16),
+                )
+              ],
+            ))
           ],
         )
       ],

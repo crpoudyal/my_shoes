@@ -5,7 +5,8 @@ import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+  final int nextIndex;
+  const BottomNavBar({super.key, this.nextIndex = 3});
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
