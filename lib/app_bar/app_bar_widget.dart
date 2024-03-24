@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -14,11 +15,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       title: Row(
         children: [
-          const Text('United Shoes. ',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+          const Text(Constants.appName,
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w900)),
           Text(slogon,
               style:
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                  const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
         ],
       ),
       elevation: 1,

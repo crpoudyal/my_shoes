@@ -1,4 +1,6 @@
 class Constants {
+  static const String appName = 'United Real Leather Shoes ';
+  static const String appSlogon = '100% Pure Leather';
   // contact
   static const String email = 'unitedtanneries@gmail.com';
   static const String phoneNumberMembership = '9820728444 [ Membership ]';

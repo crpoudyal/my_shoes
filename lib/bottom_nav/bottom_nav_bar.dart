@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_shoes/screens/brands_screen.dart';
+import 'package:my_shoes/screens/all_shoes.dart';
 import 'package:my_shoes/screens/contact_screen.dart';
+import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
+import 'package:my_shoes/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -21,8 +23,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   static const List<Widget> _pages = [
     HomeScreen(),
-    BrandsScreen(),
+    AllShoes(),
     HomeScreen(),
+    DeliveryScreen(),
     ContactPage(),
   ];
   @override
@@ -44,6 +47,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.search_outlined, color: Colors.black),
                 label: 'Search'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.delivery_dining_outlined, color: Colors.black),
+                label: 'Delivery'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.phone_outlined, color: Colors.black),
                 label: 'Contact')
