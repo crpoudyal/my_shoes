@@ -68,19 +68,42 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              '# Top Brands',
+              '# New Items',
               style: TextStyle(fontSize: 16),
             ),
+            // Expanded(
+            //   child: ListView.builder(
+            //       physics: const ClampingScrollPhysics(),
+            //       scrollDirection: Axis.horizontal,
+            //       itemCount: ImageHelper.brands.length,
+            //       itemBuilder: (context, index) {
+            //         return ItemWidget(
+            //           itemImages: ImageHelper.brands[index].brandImage,
+            //           itemName: ImageHelper.brands[index].brandName,
+            //           ontap: () {},
+            //         );
+            //       }),
+            // ),
             Expanded(
               child: ListView.builder(
                   physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  itemCount: ImageHelper.brands.length,
+                  itemCount: ImageHelper.items.length,
                   itemBuilder: (context, index) {
                     return ItemWidget(
-                      itemImages: ImageHelper.brands[index].brandImage,
-                      itemName: ImageHelper.brands[index].brandName,
-                      ontap: () {},
+                      itemImages: ImageHelper.items[index].itemImage,
+                      itemName: ImageHelper.items[index].itemName,
+                      ontap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllProduct(
+                                      image: ImageHelper.items[index].itemImage,
+                                      name:
+                                          ImageHelper.items[index].itemFullName,
+                                      brand: ImageHelper.items[index].itemBrand,
+                                    )));
+                      },
                     );
                   }),
             ),
