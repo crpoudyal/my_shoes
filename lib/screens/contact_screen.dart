@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
+import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
+import 'package:my_shoes/widgets/contact_footer_widget.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -9,7 +11,7 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const AppBarWidget(slogon: '#सस्तो जुत्ता'),
+      appBar: const AppBarWidget(slogon: Constants.appSlogon),
       body: Padding(
         padding: const EdgeInsets.only(right: 12, left: 12, bottom: 10),
         child: Column(
@@ -28,22 +30,22 @@ class ContactPage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
             const ListTile(
-              leading: Icon(Icons.location_on),
-              title: Text('Above Nepal SBI Bank'),
-              subtitle: Text('Himalayan Road, Biratnagar'),
+              leading: Icon(Icons.location_on_outlined),
+              title: Text(Constants.addressOne),
+              subtitle: Text(Constants.addressTwo),
             ),
             const ListTile(
-              leading: Icon(Icons.mail),
-              title: Text('xyz@gmail.com'),
+              leading: Icon(Icons.mail_outline),
+              title: Text(Constants.email),
             ),
             const ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('+977-98XXXXXXXX'),
-              subtitle: Text('+977-98XXXXXXXX'),
+              leading: Icon(Icons.phone_outlined),
+              title: Text(Constants.phoneNumberMembership),
+              subtitle: Text(Constants.phoneNumberBusiness),
             ),
             const ListTile(
               leading: Icon(Icons.public),
-              title: Text('xyz.com.np'),
+              title: Text(Constants.webSite),
             ),
             Row(
               children: [
@@ -80,35 +82,7 @@ class ContactPage extends StatelessWidget {
           ],
         ),
       ),
-      persistentFooterButtons: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Flexible(
-                child: TextButton(
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-                    child: const Text(
-                      'Membership',
-                      style: TextStyle(color: Colors.black),
-                    ))),
-            Flexible(
-                child: TextButton(
-                    style: TextButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5))),
-                    onPressed: () {},
-                    child: const Text(
-                      'Business',
-                      style: TextStyle(color: Colors.black),
-                    ))),
-          ],
-        )
-      ],
+      persistentFooterButtons: const [ContactFooterWidget()],
     );
   }
 }
