@@ -3,6 +3,7 @@ import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/widgets/contact_footer_widget.dart';
+import 'package:my_shoes/widgets/contact_list_widget.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -32,23 +33,44 @@ class ContactPage extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
             ),
-            const ListTile(
-              leading: Icon(Icons.location_on_outlined),
-              title: Text(Constants.addressOne),
-              subtitle: Text(Constants.addressTwo),
+            ContactListWidget(
+              contactTypeName: const Column(
+                children: [
+                  Text(Constants.addressOne),
+                  Text(Constants.addressTwo)
+                ],
+              ),
+              iconData: Icons.location_on_outlined,
+              onTap: () {},
             ),
-            const ListTile(
-              leading: Icon(Icons.mail_outline),
-              title: Text(Constants.email),
+            ContactListWidget(
+              contactTypeName: const Column(
+                children: [
+                  Text(Constants.email),
+                ],
+              ),
+              iconData: Icons.mail_outline,
+              onTap: () {},
             ),
-            const ListTile(
-              leading: Icon(Icons.phone_outlined),
-              title: Text(Constants.phoneNumberMembership),
-              subtitle: Text(Constants.phoneNumberBusiness),
+            ContactListWidget(
+              contactTypeName: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(Constants.phoneNumberMembership),
+                  Text(Constants.phoneNumberBusiness),
+                ],
+              ),
+              iconData: Icons.phone_outlined,
+              onTap: () {},
             ),
-            const ListTile(
-              leading: Icon(Icons.public),
-              title: Text(Constants.webSite),
+            ContactListWidget(
+              contactTypeName: const Column(
+                children: [
+                  Text(Constants.webSite),
+                ],
+              ),
+              iconData: Icons.public,
+              onTap: () {},
             ),
             Row(
               children: [
