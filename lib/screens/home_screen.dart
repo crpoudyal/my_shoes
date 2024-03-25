@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: const AppBarWidget(slogon: ''),
       body: Padding(
-        padding: const EdgeInsets.only(left: 12, right: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -125,12 +125,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
               children: [
                 SizedBox(
-                    height: 50,
-                    width: 50,
+                    height: 30,
+                    width: 30,
                     child: Image.asset(ImageHelper.imepayLogo)),
-                const Text(
-                  'Payment Partner',
-                  style: TextStyle(fontSize: 16),
+                const Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Text(
+                    'Payment Partner',
+                    style: TextStyle(fontSize: 16),
+                  ),
                 )
               ],
             ))
