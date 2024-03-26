@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 200,
+              height: 250,
               width: double.infinity,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 10),
             const Text(
-              'Made in Nepal',
+              Constants.madeinnepal,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
             const SizedBox(height: 10),
@@ -66,23 +66,11 @@ class _HomeScreenState extends State<HomeScreen> {
                               price: ImageHelper.items[index].itemPrice,
                             ),
                           ),
-                          
                         );
                       },
                     );
                   }),
             ),
-            const SizedBox(height: 10),
-            Container(
-              height: 50,
-              width: double.infinity,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(ImageHelper.midBanner),
-                    fit: BoxFit.contain),
-              ),
-            ),
-            const SizedBox(height: 10),
             const Text(
               Constants.newArrivles,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
@@ -113,44 +101,53 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   }),
             ),
+            Container(
+              height: 50,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(ImageHelper.midBanner),
+                    fit: BoxFit.contain),
+              ),
+            ),
           ],
         ),
       ),
-      persistentFooterButtons: [
-        Row(
-          children: [
-            Flexible(
-                child: Row(
-              children: [
-                SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: Image.asset(ImageHelper.darazLogo)),
-                const Text(
-                  'Available in daraz',
-                  style: TextStyle(fontSize: 16),
-                )
-              ],
-            )),
-            Flexible(
-                child: Row(
-              children: [
-                SizedBox(
-                    height: 30,
-                    width: 30,
-                    child: Image.asset(ImageHelper.imepayLogo)),
-                const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Text(
-                    'Payment Partner',
-                    style: TextStyle(fontSize: 16),
-                  ),
-                )
-              ],
-            ))
-          ],
-        )
-      ],
+      // persistentFooterButtons: [
+      // Row(
+      //   children: [
+      //     Flexible(
+      //         child: Row(
+      //       children: [
+      //         SizedBox(
+      //             height: 50,
+      //             width: 50,
+      //             child: Image.asset(ImageHelper.darazLogo)),
+      //         const Text(
+      //           Constants.availableDaraz,
+      //           style: TextStyle(fontSize: 16),
+      //         )
+      //       ],
+      //     )),
+      //     Flexible(
+      //         child: Row(
+      //       children: [
+      //         SizedBox(
+      //             height: 30,
+      //             width: 30,
+      //             child: Image.asset(ImageHelper.imepayLogo)),
+      //         const Padding(
+      //           padding: EdgeInsets.all(12.0),
+      //           child: Text(
+      //             Constants.paymentPartner,
+      //             style: TextStyle(fontSize: 16),
+      //           ),
+      //         )
+      //       ],
+      //     ))
+      //   ],
+      // )
+      // ],
     );
   }
 }
