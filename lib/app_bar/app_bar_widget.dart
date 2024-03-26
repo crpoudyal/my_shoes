@@ -16,7 +16,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: [
           const Text(Constants.appName,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900)),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900)),
           const SizedBox(
             width: 10,
           ),
@@ -25,7 +25,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
                   const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
         ],
       ),
-      elevation: 1,
+      elevation: 4,
       leading: Padding(
         padding: const EdgeInsets.only(left: 12),
         child: Image.asset(ImageHelper.appIcon),

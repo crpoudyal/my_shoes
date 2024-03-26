@@ -47,6 +47,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedItemColor: Colors.black,
             backgroundColor: Colors.grey,
             currentIndex: _selectedIndex,
+            unselectedItemColor: Colors.black,
+            selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+            showUnselectedLabels: true,
             onTap: _onItemTapped,
             items: const [
               BottomNavigationBarItem(
