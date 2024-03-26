@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 250,
+              height: 200,
               width: double.infinity,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
@@ -66,10 +66,21 @@ class _HomeScreenState extends State<HomeScreen> {
                               price: ImageHelper.items[index].itemPrice,
                             ),
                           ),
+                          
                         );
                       },
                     );
                   }),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              height: 50,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(ImageHelper.midBanner),
+                    fit: BoxFit.contain),
+              ),
             ),
             const SizedBox(height: 10),
             const Text(
