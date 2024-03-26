@@ -3,10 +3,12 @@ import 'package:my_shoes/screens/all_shoes.dart';
 import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
+import 'package:my_shoes/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
-  final int nextIndex;
-  const BottomNavBar({super.key, this.nextIndex = 3});
+  const BottomNavBar({
+    super.key,
+  });
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -24,7 +26,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   static const List<Widget> _pages = [
     HomeScreen(),
     AllShoes(),
-    HomeScreen(),
+    SearchScreen(),
     DeliveryScreen(),
     ContactPage(),
   ];
@@ -32,28 +34,39 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: Colors.black,
-          backgroundColor: Colors.grey,
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined, color: Colors.black),
-                label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark_outline, color: Colors.black),
-                label: 'Items'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.search_outlined, color: Colors.black),
-                label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.delivery_dining_outlined, color: Colors.black),
-                label: 'Delivery'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.phone_outlined, color: Colors.black),
-                label: 'Contact')
-          ]),
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 0.8,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+            selectedItemColor: Colors.black,
+            backgroundColor: Colors.grey,
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home_outlined, color: Colors.black),
+                  label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.bookmark_outline, color: Colors.black),
+                  label: 'Items'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search_outlined, color: Colors.black),
+                  label: 'Search'),
+              BottomNavigationBarItem(
+                  icon:
+                      Icon(Icons.delivery_dining_outlined, color: Colors.black),
+                  label: 'Delivery'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.phone_outlined, color: Colors.black),
+                  label: 'Contact')
+            ]),
+      ),
     );
   }
 }
