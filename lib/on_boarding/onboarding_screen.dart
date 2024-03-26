@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
+import 'package:my_shoes/constants/color_constants.dart';
 import 'package:my_shoes/helper/onboarding_helper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -57,7 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF4B4B4B)),
+                          backgroundColor: ColorConstants.buttomColor),
                       onPressed: () {
                         pageController.nextPage(
                             duration: const Duration(milliseconds: 500),
@@ -90,7 +91,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           : const Text(
                               'Skip',
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: ColorConstants.buttomColor,
                                   fontWeight: FontWeight.w500),
                             ),
                     ),
