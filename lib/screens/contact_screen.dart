@@ -5,6 +5,7 @@ import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/widgets/contact_footer_widget.dart';
 import 'package:my_shoes/widgets/contact_list_widget.dart';
+import 'package:my_shoes/widgets/webview_flutter_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ContactPageState extends State<ContactPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
+    // Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const AppBarWidget(slogon: ''),
       body: Padding(
@@ -36,14 +37,15 @@ class _ContactPageState extends State<ContactPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: Container(
-                height: screenSize.height / 3,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(ImageHelper.map), fit: BoxFit.cover)),
-              ),
-            ),
+            // Expanded(
+            //   child: Container(
+            //     height: screenSize.height / 3,
+            //     decoration: const BoxDecoration(
+            //         image: DecorationImage(
+            //             image: AssetImage(ImageHelper.map), fit: BoxFit.cover)),
+            //   ),
+            // ),
+            const Expanded(child: WebviewFlutterWidget()),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
               child: Text(
