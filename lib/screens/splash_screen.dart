@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> {
               const Padding(
                 padding: EdgeInsets.only(top: 20),
                 child: Text(
-                  "Shoes Marketplace",
+                  Constants.shoesMarketplace,
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

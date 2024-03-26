@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
-import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/screens/shoes_details.dart';
 import 'package:my_shoes/widgets/item_widget.dart';
@@ -16,7 +15,7 @@ class _AllShoesState extends State<AllShoes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarWidget(slogon: Constants.appSlogon),
+      appBar: const AppBarWidget(slogon: ''),
       body: Container(
         padding: const EdgeInsets.all(12.0),
         child: GridView.builder(
@@ -32,7 +31,7 @@ class _AllShoesState extends State<AllShoes> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ShoesDetails(
-                        name: ImageHelper.items[index].itemName,
+                        name: ImageHelper.items[index].itemFullName,
                         image: ImageHelper.items[index].itemImage,
                         brand: ImageHelper.items[index].itemBrand,
                         price: ImageHelper.items[index].itemPrice,
