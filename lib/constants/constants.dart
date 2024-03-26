@@ -22,4 +22,8 @@ class Constants {
   static const String contactUs = 'Contact Us';
   static const String membership = 'Membership';
   static const String business = 'Business';
+
+  // delivery
+  static const String deliveryPartnerName = 'Aramex';
+  static const String trackingNumber = 'ARAMEX7987878978787';
 }

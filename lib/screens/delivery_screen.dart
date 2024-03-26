@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
+import 'package:my_shoes/constants/constants.dart';
+
+import 'package:timelines/timelines.dart';
 
 class DeliveryScreen extends StatefulWidget {
   const DeliveryScreen({super.key});
@@ -9,37 +12,89 @@ class DeliveryScreen extends StatefulWidget {
 }
 
 class _DeliveryScreenState extends State<DeliveryScreen> {
+  List<String> timelineTitle = [
+    'Delivered',
+    'Out for Delivery',
+    'Shipped',
+    'Reached Our Logistics Facility',
+    'Dropped Off',
+  ];
+  List<String> timelineTimes = [
+    '1:32 PM',
+    '11:35 AM',
+    '3:20 AM',
+    '11:35 PM',
+    '8:45 PM',
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: AppBarWidget(slogon: ''),
-      body: Center(
-        child: SizedBox(
-            height: 100,
-            width: 100,
-            child: Icon(Icons.delivery_dining_outlined)),
+    return Scaffold(
+      appBar: const AppBarWidget(slogon: ''),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Text(
+                "Our Delivery Partner",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+            ),
+            Container(
+              height: 100,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Colors.deepOrange,
+                  borderRadius: BorderRadius.circular(10)),
+              child: const Center(
+                  child: Text(
+                'Delivery Partner: ${Constants.deliveryPartnerName}',
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
+              )),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Text(
+                'Tracking Number : ${Constants.trackingNumber}',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Timeline.tileBuilder(
+                  builder: TimelineTileBuilder.fromStyle(
+                      connectorStyle: ConnectorStyle.dashedLine,
+                      itemCount: timelineTitle.length,
+                      contentsAlign: ContentsAlign.basic,
+                      contentsBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: Text(
+                            timelineTitle[index],
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        );
+                      },
+                      oppositeContentsBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: Text(
+                            timelineTimes[index],
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        );
+                      }),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
-
-  //  DropdownMenu<Items>(
-  //             width: double.infinity,
-  //             controller: textController,
-  //             enableFilter: true,
-  //             requestFocusOnTap: true,
-  //             initialSelection: Items.Men,
-  //             trailingIcon: const Icon(Icons.arrow_drop_down),
-  //             inputDecorationTheme: const InputDecorationTheme(
-  //               contentPadding: EdgeInsets.symmetric(vertical: 5.0),
-  //             ),
-  //             onSelected: (val) {},
-  //             dropdownMenuEntries: Items.values.map<DropdownMenuEntry<Items>>(
-  //               (Items item) {
-  //                 return DropdownMenuEntry<Items>(
-  //                   value: item,
-  //                   label: item.name,
-  //                 );
-  //               },
-  //             ).toList(),
-  //           ),

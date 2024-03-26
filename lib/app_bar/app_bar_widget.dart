@@ -27,13 +27,13 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       ),
       elevation: 4,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 12),
+        padding: const EdgeInsets.only(left: 18),
         child: Image.asset(ImageHelper.appIcon),
       ),
       shadowColor: Colors.grey,
       actions: [
         Padding(
-          padding: const EdgeInsets.only(right: 12),
+          padding: const EdgeInsets.only(right: 18),
           child: CircleAvatar(
             maxRadius: 20,
             child: Image.asset(ImageHelper.nepalLogo),
