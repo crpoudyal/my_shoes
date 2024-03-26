@@ -1,12 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
+import 'package:my_shoes/constants/color_constants.dart';
 import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/widgets/contact_footer_widget.dart';
 import 'package:my_shoes/widgets/contact_list_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class ContactPage extends StatelessWidget {
+class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
+
+  @override
+  State<ContactPage> createState() => _ContactPageState();
+}
+
+class _ContactPageState extends State<ContactPage> {
+  bool isWhatsAppPressed = false;
+// Url luncher for contact
+  final Uri phoneNumberMembership =
+      Uri.parse("tel:${Constants.phoneNumberMembership}");
+  final Uri phoneNumberBusiness =
+      Uri.parse("tel:${Constants.phoneNumberBusiness}");
+  final Uri webSite = Uri.parse("https://${Constants.webSite}");
+  final Uri pracasInfosys = Uri.parse(Constants.pracasInfosys);
+  final Uri googleMap = Uri.parse(Constants.googleMapLink);
+  final Uri email = Uri.parse("mailto:${Constants.email}");
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +47,7 @@ class ContactPage extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 12),
               child: Text(
-                'Contact Us',
+                Constants.contactUs,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
             ),
@@ -41,7 +59,9 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
               iconData: Icons.location_on_outlined,
-              onTap: () {},
+              onTap: () {
+                launchUrl(googleMap);
+              },
             ),
             ContactListWidget(
               contactTypeName: const Column(
@@ -50,14 +70,26 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
               iconData: Icons.mail_outline,
-              onTap: () {},
+              onTap: () {
+                launchUrl(email);
+              },
             ),
             ContactListWidget(
-              contactTypeName: const Column(
+              contactTypeName: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(Constants.phoneNumberMembership),
-                  Text(Constants.phoneNumberBusiness),
+                  InkWell(
+                      onTap: () {
+                        launchUrl(phoneNumberMembership);
+                      },
+                      child: const Text(
+                          "${Constants.phoneNumberMembership} [ Membership ]")),
+                  InkWell(
+                      onTap: () {
+                        launchUrl(phoneNumberMembership);
+                      },
+                      child: const Text(
+                          '${Constants.phoneNumberBusiness} [ Business ]')),
                 ],
               ),
               iconData: Icons.phone_outlined,
@@ -70,14 +102,17 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
               iconData: Icons.public,
-              onTap: () {},
+              onTap: () {
+                launchUrl(webSite);
+              },
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
+                      backgroundColor: ColorConstants.buttomColor,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
                   child: const Text(
@@ -86,30 +121,54 @@ class ContactPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
-                  child: CircleAvatar(
-                    maxRadius: 20,
-                    child: Image.asset(ImageHelper.whatsapp),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isWhatsAppPressed = !isWhatsAppPressed;
+                      });
+                    },
+                    child: CircleAvatar(
+                      maxRadius: 20,
+                      child: Image.asset(ImageHelper.whatsapp),
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CircleAvatar(
                     maxRadius: 20,
                     child: Image.asset(ImageHelper.telegram),
                   ),
                 ),
-                const Divider(
-                  thickness: 0.5,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: CircleAvatar(
+                    maxRadius: 20,
+                    child: InkWell(
+                        onTap: () {
+                          launchUrl(pracasInfosys);
+                        },
+                        child: Image.asset(ImageHelper.onboarding_1)),
+                  ),
                 ),
               ],
             ),
           ],
         ),
       ),
-      persistentFooterButtons: const [
-        ContactFooterWidget(),
-      ],
+      persistentFooterButtons: isWhatsAppPressed
+          ? [
+              ContactFooterWidget(
+                onTapMembership: () {
+                  launchUrl(phoneNumberMembership);
+                },
+                onTapBusiness: () {
+                  launchUrl(phoneNumberBusiness);
+                },
+              ),
+            ]
+          : null,
     );
   }
 }

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:my_shoes/constants/constants.dart';
 
 class ContactFooterWidget extends StatelessWidget {
+  final VoidCallback onTapMembership;
+  final VoidCallback onTapBusiness;
   const ContactFooterWidget({
     super.key,
+    required this.onTapMembership,
+    required this.onTapBusiness,
   });
 
   @override
@@ -16,9 +21,9 @@ class ContactFooterWidget extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5))),
-                onPressed: () {},
+                onPressed: onTapMembership,
                 child: const Text(
-                  'Membership',
+                  Constants.membership,
                   style: TextStyle(color: Colors.black),
                 ))),
         Flexible(
@@ -27,9 +32,9 @@ class ContactFooterWidget extends StatelessWidget {
                     backgroundColor: Colors.transparent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5))),
-                onPressed: () {},
+                onPressed: onTapBusiness,
                 child: const Text(
-                  'Business',
+                  Constants.business,
                   style: TextStyle(color: Colors.black),
                 ))),
       ],
