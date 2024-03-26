@@ -6,6 +6,7 @@ class ImageHelper {
   static const nepalLogo = 'assets/images/nepal_logo.png';
   static const microsoft = 'assets/images/microsoft.jpg';
   static const homeBanner = 'assets/images/banner.png';
+  static const midBanner = 'assets/images/mid_banner.png';
   static const map = 'assets/images/map.png';
   static const whatsapp = 'assets/images/whatsapp_logo.jpeg';
   static const linkedin = 'assets/images/linkedin.png';
@@ -32,66 +33,77 @@ class ImageHelper {
         itemImage: 'assets/shoes/11.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-912)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-909',
         itemImage: 'assets/shoes/12.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-909)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-901',
         itemImage: 'assets/shoes/13.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-901)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-901',
         itemImage: 'assets/shoes/14.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-901)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-910',
         itemImage: 'assets/shoes/15.png',
         itemFullName: 'United Real Leather Sportive Shoes For Men ( UT-910)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-951',
         itemImage: 'assets/shoes/16.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-951)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-909',
         itemImage: 'assets/shoes/17.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-909)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-901',
         itemImage: 'assets/shoes/18.png',
         itemFullName: 'United Real Leather Sport Shoes For Men (UT-901)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: 'Children'),
     ItemModel(
         itemName: 'UT-551',
         itemImage: 'assets/shoes/19.png',
         itemFullName: 'United Real Leather Sport Shoes For Women (UT-551)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: ''),
     ItemModel(
         itemName: 'UT-910',
         itemImage: 'assets/shoes/20.png',
         itemFullName: 'United Real Leather Sportive Shoes For Men ( UT-910)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: 'Women'),
     ItemModel(
         itemName: 'UT-903',
         itemImage: 'assets/shoes/21.png',
         itemFullName: 'United Real Leather Sportive Shoes For Men ( UT-903)',
         itemBrand: 'United Real Leather',
-        itemPrice: 'Rs. 2,499'),
+        itemPrice: 'Rs. 2,499',
+        itemCategories: 'Men'),
   ];
 }
