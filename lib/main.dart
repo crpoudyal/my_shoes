@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
 import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/screens/splash_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  final onboarding = prefs.getBool("onboarding") ?? false;
+  runApp(MyApp(onboarding: onboarding));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool onboarding;
+  const MyApp({super.key, required this.onboarding});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Comfortaa',
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: onboarding ? const BottomNavBar() : const SplashScreen(),
     );
   }
 }

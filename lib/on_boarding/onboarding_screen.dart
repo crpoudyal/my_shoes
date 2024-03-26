@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
 import 'package:my_shoes/constants/color_constants.dart';
 import 'package:my_shoes/helper/onboarding_helper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -78,7 +79,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       height: 10,
                     ),
                     TextButton(
-                      onPressed: () {
+                      onPressed: () async {
+                        final prefs = await SharedPreferences.getInstance();
+                        await prefs.setBool("onboarding", true);
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
@@ -127,6 +130,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 Widget getStarted(BuildContext context) {
   return TextButton(
       onPressed: () async {
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setBool("onboarding", true);
+
         Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => const BottomNavBar()));
       },
