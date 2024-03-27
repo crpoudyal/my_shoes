@@ -6,12 +6,16 @@ class ItemWidget extends StatelessWidget {
   final String itemImages;
   final String itemName;
   final VoidCallback ontap;
+  final int height;
+  final int width;
 
   const ItemWidget({
     super.key,
     required this.itemImages,
     required this.itemName,
     required this.ontap,
+    this.height = 65,
+    this.width = 65,
   });
 
   @override
@@ -23,8 +27,8 @@ class ItemWidget extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 65,
-              width: 65,
+              height: height.toDouble(),
+              width: width.toDouble(),
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(itemImages), fit: BoxFit.contain)),
