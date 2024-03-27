@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/bottom_nav/shoes_bottom_nav_bar.dart';
+import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
-import 'package:my_shoes/screens/shoes_details.dart';
 import 'package:my_shoes/widgets/item_widget.dart';
 
 enum Categories {
@@ -40,7 +40,7 @@ class _SearchScreenState extends State<SearchScreen> {
             const Padding(
               padding: EdgeInsets.all(24.0),
               child: Text(
-                'Search by categories',
+                Constants.searchCategories,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),
@@ -97,13 +97,11 @@ class _SearchScreenState extends State<SearchScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ShoesBottomNavBar(
-                                    name: ImageHelper.items[index].itemName,
+                                    name: ImageHelper.items[index].itemFullName,
                                     image: ImageHelper.items[index].itemImage,
                                     price: ImageHelper.items[index].itemPrice,
                                     brand: ImageHelper.items[index].itemBrand,
                                     crrentIndex: 1)));
-                        setState(() {
-                        });
                         // Navigator.push(
                         //   context,
                         //   MaterialPageRoute(

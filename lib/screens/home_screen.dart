@@ -3,7 +3,6 @@ import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/bottom_nav/shoes_bottom_nav_bar.dart';
 import 'package:my_shoes/constants/constants.dart';
 import 'package:my_shoes/helper/image_helper.dart';
-import 'package:my_shoes/screens/shoes_details.dart';
 import 'package:my_shoes/widgets/Item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -61,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ShoesBottomNavBar(
-                                    name: ImageHelper.items[index].itemName,
+                                    name: ImageHelper.items[index].itemFullName,
                                     image: ImageHelper.items[index].itemImage,
                                     price: ImageHelper.items[index].itemPrice,
                                     brand: ImageHelper.items[index].itemBrand,
@@ -89,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ShoesBottomNavBar(
-                                    name: ImageHelper.items[index].itemName,
+                                    name: ImageHelper.items[index].itemFullName,
                                     image: ImageHelper.items[index].itemImage,
                                     price: ImageHelper.items[index].itemPrice,
                                     brand: ImageHelper.items[index].itemBrand,

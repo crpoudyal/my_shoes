@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/constants/color_constants.dart';
 import 'package:my_shoes/constants/constants.dart';
+import 'package:my_shoes/helper/image_helper.dart';
 
 import 'package:timelines/timelines.dart';
 
@@ -42,26 +43,34 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.all(12.0),
-              child: Text(
-                "Our Delivery Partner",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-            ),
+            // const Padding(
+            //   padding: EdgeInsets.all(12.0),
+            //   child: Text(
+            //     "Our Delivery Partner",
+            //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            //   ),
+            // ),
             Container(
-              height: 100,
+              height: 180,
               width: double.infinity,
               decoration: BoxDecoration(
                   color: ColorConstants.buttomColor,
                   borderRadius: BorderRadius.circular(10)),
-              child: const Center(
-                  child: Text(
-                'Delivery Partner: ${Constants.deliveryPartnerName}',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Colors.white),
+              child: Center(
+                  child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset(
+                        ImageHelper.aramexLogo,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               )),
             ),
             const Padding(
@@ -75,6 +84,7 @@ class _DeliveryScreenState extends State<DeliveryScreen> {
               child: Timeline.tileBuilder(
                 builder: TimelineTileBuilder.fromStyle(
                     connectorStyle: ConnectorStyle.dashedLine,
+                    indicatorStyle: IndicatorStyle.dot,
                     itemCount: timelineTitle.length,
                     contentsAlign: ContentsAlign.basic,
                     contentsBuilder: (context, index) {
