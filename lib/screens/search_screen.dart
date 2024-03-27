@@ -50,10 +50,19 @@ class _SearchScreenState extends State<SearchScreen> {
               requestFocusOnTap: true,
               initialSelection: Categories.Men,
               trailingIcon: const Icon(Icons.arrow_drop_down),
+              selectedTrailingIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      categoriesText.text = '';
+                    });
+                  },
+                  icon: const Icon(Icons.clear)),
               inputDecorationTheme: const InputDecorationTheme(
                 contentPadding: EdgeInsets.symmetric(vertical: 5.0),
               ),
               onSelected: (val) {
+                FocusScope.of(context).requestFocus(FocusNode());
+
                 // ImageHelper.items.where((e) => e.itemCategories == val);
               },
               dropdownMenuEntries:
