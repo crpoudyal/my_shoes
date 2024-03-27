@@ -4,34 +4,59 @@ import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
 import 'package:my_shoes/screens/search_screen.dart';
+import 'package:my_shoes/screens/shoes_details.dart';
 
-class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({super.key});
+class ShoesBottomNavBar extends StatefulWidget {
+  final String name;
+  final String image;
+  final String price;
+  final String brand;
+  int crrentIndex;
+
+  ShoesBottomNavBar({
+    super.key,
+    required this.name,
+    required this.image,
+    required this.price,
+    required this.brand,
+    required this.crrentIndex,
+  });
 
   @override
-  State<BottomNavBar> createState() => _BottomNavBarState();
+  State<ShoesBottomNavBar> createState() => _ShoesBottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
+class _ShoesBottomNavBarState extends State<ShoesBottomNavBar> {
+  int selectedIndex = 0;
+  List<Widget> _pages = [];
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = 1;
     });
   }
 
-  static const List<Widget> _pages = [
-    HomeScreen(),
-    AllShoes(),
-    SearchScreen(),
-    DeliveryScreen(),
-    ContactPage(),
-  ];
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      const HomeScreen(),
+      ShoesDetails(
+        name: widget.name,
+        image: widget.image,
+        price: widget.price,
+        brand: widget.brand,
+        currentIndex: widget.crrentIndex,
+      ),
+      const SearchScreen(),
+      const DeliveryScreen(),
+      const ContactPage(),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages.elementAt(_selectedIndex),
+      body: _pages.elementAt(selectedIndex),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           boxShadow: [
@@ -44,7 +69,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         child: BottomNavigationBar(
             selectedItemColor: Colors.black,
             backgroundColor: Colors.grey,
-            currentIndex: _selectedIndex,
+            currentIndex: selectedIndex,
             unselectedItemColor: Colors.black,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             showUnselectedLabels: true,
