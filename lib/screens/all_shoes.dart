@@ -57,10 +57,14 @@ class _AllShoesState extends State<AllShoes> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => ShoesBottomNavBar(
-                                    name: ImageHelper.items[index].itemFullName,
-                                    image: ImageHelper.items[index].itemImage,
-                                    price: ImageHelper.items[index].itemPrice,
-                                    brand: ImageHelper.items[index].itemBrand,
+                                    name: ImageHelper
+                                        .items[index + 1].itemFullName,
+                                    image:
+                                        ImageHelper.items[index + 1].itemImage,
+                                    price:
+                                        ImageHelper.items[index + 1].itemPrice,
+                                    brand:
+                                        ImageHelper.items[index + 1].itemBrand,
                                     crrentIndex: 1)));
                       },
                     );
