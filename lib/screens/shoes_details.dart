@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
 import 'package:my_shoes/constants/color_constants.dart';
 import 'package:my_shoes/constants/constants.dart';
+import 'package:my_shoes/helper/image_helper.dart';
 
 class ShoesDetails extends StatefulWidget {
   final String name;
@@ -93,9 +95,9 @@ class _ShoesDetailsState extends State<ShoesDetails> {
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 35),
                 ),
-                const Text(
-                  ' Rs. 3,499',
-                  style: TextStyle(
+                Text(
+                  widget.price,
+                  style: const TextStyle(
                       fontStyle: FontStyle.italic,
                       decoration: TextDecoration.lineThrough),
                 ),
@@ -115,7 +117,7 @@ class _ShoesDetailsState extends State<ShoesDetails> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5))),
                     child: const Text(
-                      'Buy Now',
+                      Constants.buyNow,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
@@ -126,7 +128,7 @@ class _ShoesDetailsState extends State<ShoesDetails> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5))),
                     child: const Text(
-                      'Add to Cart',
+                      Constants.addToCart,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
@@ -143,36 +145,8 @@ class _ShoesDetailsState extends State<ShoesDetails> {
             const Padding(
               padding: EdgeInsets.only(top: 10.0),
               child: Text(
-                'UNITED REAL LEATHER brings to you 100% pure. Genuine Leather, made in Nepal with Nepali Raw Materials, handmade collection shoes crafted for comfort, style',
+                Constants.shoesDescription,
                 style: TextStyle(fontSize: 16),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: ColorConstants.buttomColor,
-                    borderRadius: BorderRadius.circular(10)),
-                child: InkWell(
-                  onTap: () {
-                    // Navigator.pushReplacement(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => const BottomNavBar(
-                    //               index: 3,
-                    //             )));
-                  },
-                  child: const Center(
-                      child: Text(
-                    'Delivery Partner: ${Constants.deliveryPartnerName}',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.white),
-                  )),
-                ),
               ),
             ),
             const Padding(
@@ -187,31 +161,63 @@ class _ShoesDetailsState extends State<ShoesDetails> {
                 ),
               ),
             ),
+            Flexible(
+                child: Center(
+              child: Image.asset(
+                ImageHelper.aramexLogo,
+                color: ColorConstants.buttomColor,
+              ),
+            ))
+            // Padding(
+            //   padding: const EdgeInsets.only(top: 10),
+            //   child: Container(
+            //     height: 50,
+            //     width: double.infinity,
+            //     decoration:
+            //         BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            //     child: InkWell(
+            //       onTap: () {
+            //         // Navigator.pushReplacement(
+            //         //     context,
+            //         //     MaterialPageRoute(
+            //         //         builder: (context) => const BottomNavBar(
+            //         //               index: 3,
+            //         //             )));
+            //       },
+            //       child: Center(child: Image.asset(ImageHelper.aramexLogo)),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
-      persistentFooterButtons: [
-        SizedBox(
-          width: double.infinity,
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-                backgroundColor: ColorConstants.buttomColor,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5))),
-            child: const Text(
-              'Buy Now',
-              style: TextStyle(color: Colors.white, fontSize: 16),
-            ),
-          ),
-        )
-      ],
-      // bottomNavigationBar: ShoesBottomNavBar(
-      //     name: widget.name,
-      //     image: widget.image,
-      //     price: widget.price,
-      //     brand: widget.brand,
-      //     crrentIndex: currentIndex),
     );
+    // persistentFooterButtons: [
+    // SizedBox(
+    //     height: 50, width: 50, child: Image.asset(ImageHelper.aramexLogo)),
+
+    // SizedBox(
+    //   width: double.infinity,
+    //   child: ElevatedButton(
+    //     onPressed: () {},
+    //     style: ElevatedButton.styleFrom(
+    //         backgroundColor: ColorConstants.buttomColor,
+    //         shape: RoundedRectangleBorder(
+    //             borderRadius: BorderRadius.circular(5))),
+    //     child: const Text(
+    //       'Buy Now',
+    //       style: TextStyle(color: Colors.white, fontSize: 16),
+    //     ),
+    //   ),
+    // )
+    // ],
+    // persistentFooterAlignment: AlignmentDirectional.center,
+    // bottomNavigationBar: ShoesBottomNavBar(
+    //     name: widget.name,
+    //     image: widget.image,
+    //     price: widget.price,
+    //     brand: widget.brand,
+    //     crrentIndex: currentIndex),
+    // );
   }
 }

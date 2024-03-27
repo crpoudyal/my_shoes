@@ -26,4 +26,13 @@ class Constants {
   // delivery
   static const String deliveryPartnerName = 'Aramex';
   static const String trackingNumber = 'ARAMEX7987878978787';
+
+  // search
+  static const String searchCategories = 'Search by categories';
+
+  // shoes details
+  static const String buyNow = 'Buy Now';
+  static const String addToCart = 'Add to Cart';
+  static const String shoesDescription =
+      'UNITED REAL LEATHER brings to you 100% pure. Genuine Leather, made in Nepal with Nepali Raw Materials, handmade collection shoes crafted for comfort, style';
 }
