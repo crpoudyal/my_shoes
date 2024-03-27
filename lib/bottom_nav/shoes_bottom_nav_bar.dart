@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_shoes/screens/all_shoes.dart';
 import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
@@ -26,18 +25,32 @@ class ShoesBottomNavBar extends StatefulWidget {
   State<ShoesBottomNavBar> createState() => _ShoesBottomNavBarState();
 }
 
+int selectedIndex = 0;
+
 class _ShoesBottomNavBarState extends State<ShoesBottomNavBar> {
-  int selectedIndex = 0;
   List<Widget> _pages = [];
   void _onItemTapped(int index) {
+    // if (selectedIndex == 1) {
+    //   Navigator.pushReplacement(
+    //       context,
+    //       MaterialPageRoute(
+    //           builder: (context) => ShoesBottomNavBar(
+    //               name: widget.name,
+    //               image: widget.image,
+    //               price: widget.price,
+    //               brand: widget.brand,
+    //               crrentIndex: widget.crrentIndex)));
+    // }
     setState(() {
-      selectedIndex = 1;
+      selectedIndex = index;
     });
   }
 
   @override
   void initState() {
     super.initState();
+    selectedIndex = 1;
+
     _pages = [
       const HomeScreen(),
       ShoesDetails(

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_shoes/app_bar/app_bar_widget.dart';
+import 'package:my_shoes/bottom_nav/shoes_bottom_nav_bar.dart';
 import 'package:my_shoes/helper/image_helper.dart';
 import 'package:my_shoes/screens/shoes_details.dart';
 import 'package:my_shoes/widgets/item_widget.dart';
@@ -62,6 +63,8 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               onSelected: (val) {
                 FocusScope.of(context).requestFocus(FocusNode());
+                debugPrint("clicked");
+                // ImageHelper
 
                 // ImageHelper.items.where((e) => e.itemCategories == val);
               },
@@ -90,17 +93,29 @@ class _SearchScreenState extends State<SearchScreen> {
                       itemImages: ImageHelper.items[index].itemImage,
                       itemName: ImageHelper.items[index].itemName,
                       ontap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ShoesDetails(
-                              name: ImageHelper.items[index].itemFullName,
-                              image: ImageHelper.items[index].itemImage,
-                              brand: ImageHelper.items[index].itemBrand,
-                              price: ImageHelper.items[index].itemPrice,
-                            ),
-                          ),
-                        );
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ShoesBottomNavBar(
+                                    name: ImageHelper.items[index].itemName,
+                                    image: ImageHelper.items[index].itemImage,
+                                    price: ImageHelper.items[index].itemPrice,
+                                    brand: ImageHelper.items[index].itemBrand,
+                                    crrentIndex: 1)));
+                        setState(() {
+                        });
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => ShoesDetails(
+                        //       name: ImageHelper.items[index].itemFullName,
+                        //       image: ImageHelper.items[index].itemImage,
+                        //       brand: ImageHelper.items[index].itemBrand,
+                        //       price: ImageHelper.items[index].itemPrice,
+                        //       currentIndex: 1,
+                        //     ),
+                        //   ),
+                        // );
                       },
                     );
                   }),
