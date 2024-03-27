@@ -10,10 +10,6 @@ class WebviewFlutterWidget extends StatefulWidget {
 }
 
 class _WebviewFlutterWidgetState extends State<WebviewFlutterWidget> {
-  var loadingPercentage = 0;
-  bool showProgessIndicator = false;
-  String errorMessage = '';
-
   final WebViewController controller = WebViewController();
 
   @override
@@ -30,28 +26,22 @@ class _WebviewFlutterWidgetState extends State<WebviewFlutterWidget> {
         NavigationDelegate(
           onPageStarted: (String url) {
             setState(() {
-              showProgessIndicator = true;
-              loadingPercentage = 0;
               debugPrint('Page started loading: $url');
             });
           },
           onProgress: (int progress) {
             setState(() {
-              showProgessIndicator = true;
-              loadingPercentage = progress;
               debugPrint('WebView is loading (progress : $progress%)');
             });
           },
           onPageFinished: (String url) {
             setState(() {
-              showProgessIndicator = false;
-              loadingPercentage = 100;
               debugPrint('Page finished loading: $url');
             });
           },
           onWebResourceError: (WebResourceError error) {
             setState(() {
-              errorMessage = 'Failed....';
+              debugPrint('Failed......');
             });
           },
         ),
