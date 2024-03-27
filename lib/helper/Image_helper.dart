@@ -8,7 +8,7 @@ class ImageHelper {
   static const homeBanner = 'assets/images/banner.png';
   static const midBanner = 'assets/images/mid_banner.png';
   static const map = 'assets/images/map.png';
-  static const whatsapp = 'assets/images/whatsapp_logo.jpeg';
+  static const whatsapp = 'assets/images/whatsapp.png';
   static const linkedin = 'assets/images/linkedin.png';
   static const telegram = 'assets/images/telegram.png';
   static const darazLogo = 'assets/images/daraz_logo.png';

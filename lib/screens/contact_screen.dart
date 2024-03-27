@@ -131,16 +131,28 @@ class _ContactPageState extends State<ContactPage> {
                       });
                     },
                     child: CircleAvatar(
-                      maxRadius: 20,
-                      child: Image.asset(ImageHelper.whatsapp),
+                      maxRadius: 22,
+                      backgroundColor: ColorConstants.buttomColor,
+                      child: Image.asset(
+                        ImageHelper.whatsapp,
+                        height: 32,
+                        width: 32,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: CircleAvatar(
-                    maxRadius: 20,
-                    child: Image.asset(ImageHelper.telegram),
+                    maxRadius: 22,
+                    backgroundColor: ColorConstants.buttomColor,
+                    child: Image.asset(
+                      ImageHelper.telegram,
+                      height: 32,
+                      width: 32,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 Padding(
