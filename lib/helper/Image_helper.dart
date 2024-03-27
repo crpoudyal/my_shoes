@@ -12,6 +12,7 @@ class ImageHelper {
   static const linkedin = 'assets/images/linkedin.png';
   static const telegram = 'assets/images/telegram.png';
   static const darazLogo = 'assets/images/daraz_logo.png';
+  static const aramexLogo = 'assets/images/aramex_logo.png';
   static const imepayLogo = 'assets/images/imepay_logo.png';
   static const onboarding_1 = 'assets/images/onboarding_1.jpg';
   static const onboarding_2 = 'assets/images/onboarding_2.jpg';
