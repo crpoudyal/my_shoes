@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_shoes/bottom_nav/bottom_nav_bar.dart';
 import 'package:my_shoes/screens/contact_screen.dart';
 import 'package:my_shoes/screens/delivery_screen.dart';
 import 'package:my_shoes/screens/home_screen.dart';
@@ -30,19 +31,18 @@ int selectedIndex = 0;
 class _ShoesBottomNavBarState extends State<ShoesBottomNavBar> {
   List<Widget> _pages = [];
   void _onItemTapped(int index) {
-    // if (selectedIndex == 1) {
-    //   Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(
-    //           builder: (context) => ShoesBottomNavBar(
-    //               name: widget.name,
-    //               image: widget.image,
-    //               price: widget.price,
-    //               brand: widget.brand,
-    //               crrentIndex: widget.crrentIndex)));
-    // }
     setState(() {
       selectedIndex = index;
+      if (selectedIndex == 1) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const BottomNavBar(
+              currentIndex: 1,
+            ),
+          ),
+        );
+      }
     });
   }
 
